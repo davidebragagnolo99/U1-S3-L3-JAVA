@@ -22,10 +22,10 @@ public class Partecipazione {
     @JoinColumn(name = "persona", referencedColumnName = "id")
     private Persona persona;
 
-    public Partecipazione(Stato stato, Evento evento, Persona persona) {
-        this.stato = stato;
-        this.evento = evento;
+    public Partecipazione(Persona persona, Evento evento, Stato stato) {
         this.persona = persona;
+        this.evento = evento;
+        this.stato = stato;
     }
 
     public Stato getStato() {
