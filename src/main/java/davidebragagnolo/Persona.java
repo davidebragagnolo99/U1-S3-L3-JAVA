@@ -9,8 +9,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "persona")
-@Getter
-@Setter
 
 
     public class Persona {
@@ -34,5 +32,53 @@ import java.util.Set;
         this.dataDiNascita = dataDiNascita;
         this.genere = genere;
         this.listaPartecipazioni = partecipazioni;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDataDiNascita() {
+        return dataDiNascita;
+    }
+
+    public void setDataDiNascita(LocalDate dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
+    }
+
+    public Sesso getGenere() {
+        return genere;
+    }
+
+    public void setGenere(Sesso genere) {
+        this.genere = genere;
+    }
+
+    public Set<Partecipazione> getListaPartecipazioni() {
+        return listaPartecipazioni;
+    }
+
+    public void setListaPartecipazioni(Set<Partecipazione> listaPartecipazioni) {
+        this.listaPartecipazioni = listaPartecipazioni;
     }
 }
