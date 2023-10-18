@@ -26,12 +26,30 @@ public class Evento {
 
     public Evento () {}
 
-    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipo, int numeroMassimoPartecipanti) {
-        Titolo = titolo;
-        DataEvento = dataEvento;
-        Descrizione = descrizione;
-        this.tipo = tipo;
-        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipo, int numeroMassimoPartecipanti, Set<Partecipazione> partecipazioni, Location location) {
+        this.setTitolo(titolo);
+        this.setDataEvento(dataEvento);
+        this.setDescrizione(descrizione);
+        this.setTipo(tipo);
+        this.setNumeroMassimoPartecipanti(numeroMassimoPartecipanti);
+        this.setLocation(location);
+        this.setPartecipazioni(partecipazioni);
+    }
+
+    public Set<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setPartecipazioni(Set<Partecipazione> partecipazioni) {
+        this.partecipazioni = partecipazioni;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public String getTitolo() {
@@ -87,6 +105,8 @@ public class Evento {
                 ", Descrizione='" + Descrizione + '\'' +
                 ", tipo=" + tipo +
                 ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
+                ", partecipazioni=" + partecipazioni +
+                ", location=" + location +
                 '}';
     }
 }
