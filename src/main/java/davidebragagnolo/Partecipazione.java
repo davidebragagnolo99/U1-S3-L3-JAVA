@@ -7,8 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table()
-@Getter
-@Setter
+
 public class Partecipazione {
     @Id
     @GeneratedValue
@@ -28,4 +27,30 @@ public class Partecipazione {
         this.evento = evento;
         this.persona = persona;
     }
+
+    public Stato getStato() {
+        return stato;
+    }
+
+    public void setStato(Stato stato) {
+        this.stato = stato;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+
 }
