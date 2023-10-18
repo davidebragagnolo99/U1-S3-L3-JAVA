@@ -2,8 +2,10 @@ package davidebragagnolo;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
+@Table(name = "evento")
 public class Evento {
     @Id
     @GeneratedValue
@@ -15,6 +17,12 @@ public class Evento {
     @Enumerated(EnumType.STRING)
     private TipoEvento tipo;
     private int numeroMassimoPartecipanti;
+
+    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+    private Set<Partecipazione> partecipazioni;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Location location;
 
     public Evento () {}
 
